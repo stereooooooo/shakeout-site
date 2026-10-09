@@ -215,6 +215,9 @@ footer.site a { color: var(--ink2); }
 
 @media (max-width: 420px) {
   h1 { font-size: 1.875rem; }
+}
+/* Narrow screens and large text: the word above its meaning, as the app does at accessibility sizes. */
+@media (max-width: 340px) {
   dl.words div { flex-direction: column; align-items: flex-start; gap: 6px; }
   dl.words dt { flex: none; }
 }
