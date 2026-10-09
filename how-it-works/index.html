@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How this works · Shakeout</title>
+  <meta name="description" content="Shakeout is an iPhone weather app for runners: a full forecast, with what heat and dew point will do to your paces.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="../icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="page">
+  <header class="site">
+    <a class="brand" href="../"><img src="../icon.svg" alt="">Shakeout</a>
+    <nav class="site" aria-label="Site">
+      <a href="../how-it-works/" aria-current="page">How this works</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../support/">Support</a>
+    </nav>
+  </header>
+  <main>
+    <h1>How this works</h1>
+    <p class="draft">Draft for Raymond's approval: the method, table, words and disclaimer are the app's text (SPEC §5.2, §5.3, §7.1, §7.2); the worked example is new.</p>
+
+    <p class="lede">Shakeout adds the forecast air temperature and dew point (°F) for the hour you run and slows your paces using its own interpolated version of a widely used coaching heuristic (Hadley, 2013): no change below a combined 110, rising to about 10% at 180, beyond which run by effort. It hasn't been validated in studies.</p>
+    <p>For background on how heat affects running, see Ely et al. (2007) and Mantzios et al. (2022).</p>
+    <p>It's general guidance, not medical advice. Your response will vary: slower or unacclimatised runners may slow more, and sun and wind change things too. Check with your doctor about exercising in heat.</p>
+    <p>For short repeats, some coaches halve the adjustment.</p>
+
+    <h2>The table</h2>
+    <p class="note">Always in °F, even when the app shows °C: the model is defined on °F sums.</p>
+    <table class="anchors">
+      <thead><tr><th scope="col">AIR TEMP + DEW POINT (°F)</th><th scope="col">PACES</th></tr></thead>
+      <tbody>
+        <tr><td>Under 110</td><td>no change</td></tr>
+        <tr><td>110</td><td>+0.5%</td></tr>
+        <tr><td>120</td><td>+1%</td></tr>
+        <tr><td>130</td><td>+2%</td></tr>
+        <tr><td>140</td><td>+3%</td></tr>
+        <tr><td>150</td><td>+4.5%</td></tr>
+        <tr><td>160</td><td>+6%</td></tr>
+        <tr><td>170</td><td>+8%</td></tr>
+        <tr><td>180</td><td>+10%</td></tr>
+        <tr><td>Above 180</td><td>by effort</td></tr>
+      </tbody>
+    </table>
+    <p>Between rows, the adjustment is a straight line. Every pace slows by the same %, rounded to the nearest 5 seconds, and never rounds faster than usual.</p>
+    <p class="dim">For example: air 72°F, dew point 68°F. The sum is 140, so paces are 3% slower, and an easy 7:42 per mile becomes 7:55.</p>
+
+    <h2>The words</h2>
+    <p>Each hour gets one word for its air, each with its own colour.</p>
+    <dl class="words">
+      <div><dt><span class="chip w-ideal">IDEAL</span></dt><dd>Cool and dry. No adjustment.</dd></div>
+      <div><dt><span class="chip w-fair">FAIR</span></dt><dd>Sum 101–115. Up to about 1% slower.</dd></div>
+      <div><dt><span class="chip w-warm">WARM</span></dt><dd>Sum 116–145; above 130 only in drier air. About 1–4% slower.</dd></div>
+      <div><dt><span class="chip w-humid">HUMID</span></dt><dd>Sum 131–145 with dew point 60 or more. About 2–4% slower.</dd></div>
+      <div><dt><span class="chip w-muggy">MUGGY</span></dt><dd>Sum 146–160. About 4–6% slower.</dd></div>
+      <div><dt><span class="chip w-brutal">BRUTAL</span></dt><dd>Sum 161–180. About 6–10% slower.</dd></div>
+      <div><dt><span class="chip w-extreme">EXTREME</span></dt><dd>Over 180. No pace targets: run by effort.</dd></div>
+      <div><dt><span class="chip w-rain">RAIN</span></dt><dd>Rain likely this hour: 50% or more.</dd></div>
+      <div><dt><span class="chip w-snow">SNOW</span></dt><dd>Snow, sleet or freezing rain likely this hour.</dd></div>
+      <div><dt><span class="chip w-windy">WINDY</span></dt><dd>Sustained 15 mph, or gusts 25.</dd></div>
+      <div><dt><span class="chip w-crisp">CRISP</span></dt><dd>Feels like 35–44°F.</dd></div>
+      <div><dt><span class="chip w-cold">COLD</span></dt><dd>Feels like 20–34°F.</dd></div>
+      <div><dt><span class="chip w-biting">BITING</span></dt><dd>Feels like below 20°F.</dd></div>
+    </dl>
+
+    <h2>Disclaimer</h2>
+    <p>Shakeout's pace adjustments are estimates from a temperature-plus-dew-point heuristic, for healthy, heat-acclimatised runners. They aren't medical advice. Check with your doctor about exercising in heat, and stop if you feel unwell.</p>
+  </main>
+  <footer class="site">
+    <p>Shakeout: Running Weather, for iPhone. Weather data from Apple Weather.</p>
+    <p><a href="../privacy/">Privacy policy</a> · <a href="../support/">Support</a></p>
+  </footer>
+</div>
+</body>
+</html>
