@@ -107,14 +107,6 @@ a { color: var(--ink); text-underline-offset: 3px; }
 .dim, .note { color: var(--ink2); }
 .note { font-size: 0.9375rem; }
 
-.draft {
-  margin-top: 20px;
-  padding: 10px 14px;
-  border: 1px dashed var(--ink2);
-  border-radius: 9px;
-  color: var(--ink2);
-  font-size: 0.875rem;
-}
 
 /* The anchor table: always °F. */
 table.anchors {
