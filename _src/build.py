@@ -2,10 +2,10 @@
 import pathlib
 root = pathlib.Path(__file__).resolve().parent.parent
 pages = {
-    "index.html": ("Shakeout: Running Weather", "", None),
-    "how-it-works/index.html": ("How this works · Shakeout", "../", "how"),
-    "privacy/index.html": ("Privacy policy · Shakeout", "../", "privacy"),
-    "support/index.html": ("Support · Shakeout", "../", "support"),
+    "index.html": ("Dewline: Running Weather", "", None),
+    "how-it-works/index.html": ("How this works · Dewline", "../", "how"),
+    "privacy/index.html": ("Privacy policy · Dewline", "../", "privacy"),
+    "support/index.html": ("Support · Dewline", "../", "support"),
 }
 nav = [("how", "how-it-works/", "How this works"), ("privacy", "privacy/", "Privacy"), ("support", "support/", "Support")]
 for path, (title, up, current) in pages.items():
@@ -20,7 +20,7 @@ for path, (title, up, current) in pages.items():
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title}</title>
-  <meta name="description" content="Shakeout is an iPhone weather app for runners: a full forecast, with what heat and dew point will do to your paces.">
+  <meta name="description" content="Dewline is an iPhone weather app for runners: a full forecast, with what heat and dew point will do to your paces.">
   <meta name="color-scheme" content="light dark">
   <link rel="icon" href="{up}icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="{up}style.css">
@@ -28,7 +28,7 @@ for path, (title, up, current) in pages.items():
 <body>
 <div class="page">
   <header class="site">
-    <a class="brand" href="{up or './'}"><img src="{up}icon.svg" alt="">Shakeout</a>
+    <a class="brand" href="{up or './'}"><img src="{up}icon.svg" alt="">Dewline</a>
     <nav class="site" aria-label="Site">
 {links}
     </nav>
@@ -37,7 +37,7 @@ for path, (title, up, current) in pages.items():
 {body.rstrip()}
   </main>
   <footer class="site">
-    <p>Shakeout: Running Weather, for iPhone. Weather data from Apple Weather.</p>
+    <p>Dewline: Running Weather, for iPhone. Weather data from Apple Weather.</p>
     <p><a href="{up}privacy/">Privacy policy</a> · <a href="{up}support/">Support</a></p>
   </footer>
 </div>
